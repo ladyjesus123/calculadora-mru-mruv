@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>tarea_2do_parcial</title>
+    <link rel="stylesheet" href="CSS/styles.css">
+</head>
+<body class="grid-container">
+    <!--para hacer la página con grid se necesitan 5 etiquetas
+    header - ENCABEZADO
+    nav - BARRA DE NAVEGACION
+    aside - SECCION LATERAL
+    article - ARTICULO O CONTENIDO PRINCIPAL
+    footer - PIE DE PAGINA
+-->
+
+    <header class="header">
+        <h1>Aprende MRU Y MRUV con Lady Castiblanco</h1>
+        <img src="Image/LADY1.jpg" alt="">
+    </header>
+    <nav class="navbar">
+        
+        <ul>
+            <li>MRU & MRUV Calculadora</li>
+            <li><a href="#formula1">Fórmula 1 MRU</a></li>
+            <li><a href="#formula2">Fórmula 2 MRU</a></li>
+            <li><a href="#formula3">Fórmula 3 MRU</a></li>
+            <li><a href="#formula4">Fórmula 1 MRUV</a></li>
+            <li><a href="#formula5">Fórmula 2 MRUV</a></li>
+            <li><a href="#formula6">Fórmula 3 MRUV</a></li>
+            
+        </ul>
+    </nav>
+    <aside class="sidebar">
+        <div class="divaside">
+            <br><br>
+            <h3>MRU</h3>
+            <P>Imagina que eres un astronauta en la Estación Espacial Internacional. 
+                Estás arreglando unos paneles solares averiados, cuando de pronto, 
+                al presionar, tu destornillador sale disparado de tus manos. Si no 
+                lo atrapas a tiempo, el destornillador estará viajando por el espacio
+                en línea recta y a velocidad constante, a menos que algo se interponga
+                en su camino. Esto sucede porque la herramienta se mueve con movimiento
+                rectilíneo uniforme, o MRU.</P>
+                <span><img src="Image/img1_sidebar.png" alt=""></span>
+                
+        </div>
+        <br><br>
+        <hr>
+        <br><br><br>
+        <hr>
+        <br><br>
+        <div class="divaside">
+            <h3>MRUV</h3>
+            <P>Imagina que manejas un carro y neesitas ir mas rapido, entonces aceleras; 
+                manejas un camion y se cruza un perrito, debes frenar rapidamente; o vas
+                tranqulamente manejando tu bicicleta sin acelerar a una velocidad constante.
+                Bueno, estos ejemplos muestran los diferentes casos del Movimiento Rectilineo
+                Uniformemente variado o MRUV.</P>
+                <span><img src="Image/img2_sidebar.jpg" alt=""></span>
+        </div>
+    </aside>
+    <article class="main">
+    <section class="section1 ancho-section">
+        <h1>FORMULAS MOVIMIENTO RECTILINEO UNIFORME (MRU)</h1>
+        <h1>¿sabías que?</h1>
+        <P>El Movimiento Rectilineo Uniforme es el movimiento que desarrolla
+            un objeto sobre una recta con una velocidad constante con aceleracion cero.
+        </P>
+        <img src="Image/MRU.jpg" class="img_principal">
+    </section>
+
+    <!--FORMULAS MRU-->
+
+    <div class="formula1 ancho" id="formula1">
+        <h3>Formula para hallar la Distancia</h3>
+        <img src="Image/mru_distancia.jpg" alt="">
+        <form id="Formulario1-mru"><!--creamos un formulario para capturar los datos-->
+            <ul>
+                <li>
+                <label for="velocidad">escribe la velocidad (m/s): </label><!--es el nombre del campo-->
+                <input type="number" id="velocidad1" name="velocidad" min="0" required><!--required para que sea obligatorio y min para que 
+                empiece desde cero-->
+                </li>
+                <li>
+                    <label for="tiempo">escribe el tiempo (s): </label><!--es el nombre del campo-->
+                    <input type="number" id="tiempo1" name="tiempo" min="0" required><!--required para que sea obligatorio-->
+                </li>
+            </ul>  
+            <br>
+            <button type="submit">Calcular Distancia </button><!--este boton sera el que capture los datos y calcule la distancia-->
+            <button type="button" id="limpiar1">Limpiar</button>
+    </form>
+    <div id="resu-distan-mru1" class="resultadosform">
+    </div>
+    </div>
+    <div class="formula2 ancho" id="formula2">
+        <h3>Formula para hallar la velocidad</h3>
+        <img src="Image/mru_velocidad.jpg" alt="">
+        <form id="Formulario2-mru"><!--creamos un formulario para capturar los datos-->
+            <ul>
+                <li>
+                <label for="distancia">escribe la distancia (m): </label><!--es el nombre del campo-->
+                <input type="number" id="distancia1" name="distancia" min="0" required><!--required para que sea obligatorio y min para que 
+                empiece desde cero-->
+                </li>
+                <li>
+                    <label for="tiempo">escribe el tiempo (s): </label><!--es el nombre del campo-->
+                    <input type="number" id="tiempo2" name="tiempo" min="0" required><!--required para que sea obligatorio-->
+                </li>
+            </ul> 
+            <br> 
+            <button type="submit">Calcular Velocidad </button><!--este boton sera el que capture los datos y calcule la distancia-->
+            <button type="button" id="limpiar2">Limpiar</button>
+    </form>
+    <div id="resu-velo-mru" class="resultadosform">
+    </div>
+    </div>
+    <div class="formula3 ancho" id="formula3">
+        <h3>Formula para hallar el tiempo</h3>
+        <img src="Image/mru_tiempo.jpg" alt="">
+        <form id="Formulario3-mru"><!--creamos un formulario para capturar los datos-->
+            <ul>
+                <li>
+                    <label for="distancia">escribe la distancia (m): </label><!--es el nombre del campo-->
+                    <input type="number" id="distancia2" name="velocidad" min="0" required><!--required para que sea obligatorio y min para que 
+                    empiece desde cero-->
+                </li>
+                <li>
+                    <label for="velocidad">escribe la velocidad (m/s): </label><!--es el nombre del campo-->
+                    <input type="number" id="velocidad2" name="velocidad" min="0" required><!--required para que sea obligatorio y min para que 
+                    empiece desde cero-->
+                </li>
+                
+            </ul>  
+            <br>
+            <button type="submit">Calcular Distancia </button><!--este boton sera el que capture los datos y calcule la distancia-->
+            <button type="button" id="limpiar3">Limpiar</button>
+    </form>
+    <div id="resu-tiempo-mru" class="resultadosform">
+    </div>
+    </div>
+
+    <!--FORMULAS MRUV-->
+    
+    <section class="section2 ancho-section">
+        <h1>FORMULAS MOVIMIENTO RECTILINEO UNIFORMEMENTE ACELERADO O VARIADO (MRUV)</h1>
+        <h1>¿sabías que?</h1>
+        <P>El Movimiento Rectilineo Uniforme es el movimiento que se desarrolla
+            un objeto sobre una recta con una velocidad y una aceleracion constante.
+        </P>
+        <img src="Image/MRUV.jpg" class="img_principal">
+    </section>
+    <div class="formula4 ancho" id="formula4">
+        <h3>Formula para hallar la velocidad final sin distancia en MRUV</h3>
+        <img src="Image/mruv_velfinal.jpg" alt="">
+        <form id="Formulario1-mruv"><!--creamos un formulario para capturar los datos-->
+            <ul>
+                <li>
+                <label for="velocidadInicial">escribe la velocidad inicial (m/s): </label><!--es el nombre del campo-->
+                <input type="number" id="velocidadInicial1" step="any" name="velocidadInicial" min="0" required><!--required para que sea obligatorio y min para que 
+                empiece desde cero-->
+                </li>
+                <li>
+                    <label for="aceleracion">escribe la aceleracion (m/s2): </label><!--es el nombre del campo-->
+                    <input type="number" id="aceleracion1" step="any" name="aceleracion" min="0" required><!--required para que sea obligatorio-->
+                </li>
+                <li>
+                    <label for="tiempo">escribe el tiempo (s): </label><!--es el nombre del campo-->
+                    <input type="number" id="tiempo3" step="any" name="tiempo" min="0" required><!--required para que sea obligatorio-->
+                </li>
+            </ul>  
+            <button type="submit">Calcular la Velocidad Final </button><!--este boton sera el que capture los datos y calcule la distancia-->
+            <button type="button" id="limpiar4">Limpiar</button>
+    </form>
+    <br>
+    <br>
+    <div id="resu-velfinal-mruv1" class="resultadosform">
+    </div>
+    </div>
+    <div class="formula5 ancho" id="formula5">
+        <h3>Formula para hallar la Distancia sin aceleracion en MRUV`</h3>
+    <img src="Image/mruv_dist_sa.jpg" alt="">    
+    <form id="Formulario2-mruv"><!--creamos un formulario para capturar los datos-->
+            <ul>
+                <li>
+                    <label for="velocidadInicial">escribe la velocidad inicial (m/s): </label><!--es el nombre del campo-->
+                    <input type="number" id="velocidadInicial2" step="any" name="velocidadInicial" min="0" required><!--required para que sea obligatorio y min para que 
+                    empiece desde cero-->
+                </li>
+                <li>
+                    <label for="velocidadFinal">escribe la velocidad final (m/s): </label><!--es el nombre del campo-->
+                    <input type="number" id="velocidadFinal2" step="any" name="velocidadInicial" min="0" required><!--required para que sea obligatorio y min para que 
+                    empiece desde cero-->
+                </li>
+                <li>
+                    <label for="tiempo">escribe el tiempo (s): </label><!--es el nombre del campo-->
+                    <input type="number" id="tiempo4" step="any" name="tiempo" min="0" required><!--required para que sea obligatorio-->
+                </li>
+            </ul>  
+            <button type="submit">Calcular Distancia </button><!--este boton sera el que capture los datos y calcule la distancia-->
+            <button type="button" id="limpiar5">Limpiar</button>
+    </form>
+    <div id="resu-distan-mruv2" class="resultadosform">
+    </div>
+</div>
+    <div class="formula6 ancho" id="formula6">
+        <h3>Formula para hallar la Distancia sin velocidad final en MRUV`</h3>
+        <img src="Image/mruv_dist_svf.jpg" alt=""> 
+        <form id="Formulario3-mruv"><!--creamos un formulario para capturar los datos-->
+            <ul>
+                <li>
+                <label for="velocidadInicial">escribe la velocidad Inicial (m/s): </label><!--es el nombre del campo-->
+                <input type="number" id="velocidadInicial3" step="any" name="velocidad" min="0" required><!--required para que sea obligatorio y min para que 
+                empiece desde cero-->
+                </li>
+                <li>
+                    <label for="tiempo">escribe el tiempo (s): </label><!--es el nombre del campo-->
+                    <input type="number" id="tiempo5" step="any" name="tiempo" min="0" required><!--required para que sea obligatorio-->
+                </li>
+                <li>
+                    <label for="aceleracion">escribe la aceleracion (m/s2): </label><!--es el nombre del campo-->
+                    <input type="number" id="aceleracion3" step="any" name="aceleracion" min="0" required><!--required para que sea obligatorio-->
+                </li>
+            </ul>  
+            <button type="submit">Calcular Distancia </button><!--este boton sera el que capture los datos y calcule la distancia-->
+            <button type="button" id="limpiar6">Limpiar</button>
+    </form>
+    <div id="resu-distan-mruv3" class="resultadosform">
+    </div>
+    </div>
+    </article>
+    <footer class="footer">
+            <div class="footer-content">
+                <span>Lady Raquel Castiblanco</span> |
+                <span>Carnet: 2290-16-22822</span> |
+                <span>Correo: <a href="mailto:lcastiblancom@miumg.edu.gt">lcastiblancom@miumg.edu.gt</a></span> |
+                <span>UMG Sede Sololá</span>       
+            </div>
+    </footer>
+    <script src="JS/mru.js"></script><!--llamamos el archivo Java Script-->
+    <script src="JS/mruv.js"></script><!--llamamos el archivo Java Script-->
+</body>
+</html>
+
+

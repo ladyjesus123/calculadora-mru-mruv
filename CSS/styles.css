@@ -1,0 +1,247 @@
+Lady Castiblanco
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}/*reglas para todo el documento*/
+
+html {
+    height: 100%;/* para que el body ocupe el 100% siempre*/
+    scroll-behavior: smooth;/*es para que vaya al formulario que quiero pero despacio*/
+}
+
+body {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 1rem;
+    min-height: 98%;/*para que ocupe el 100% de la ventana*/
+}/*para aplicar a todo el documento*/
+
+.grid-container > * {
+    box-shadow: -1px 1px 7px 0px rgba(0, 0, 0, 0.75);/*sombra de
+                los elementos del container*/
+    border-radius: 4px;
+    padding: 10px;
+    text-align: center;
+}
+
+.header {
+    grid-area: header;
+    background-color: #d68d51; /* Color de fondo */
+    color: rgb(66, 48, 48); /* Color del texto */
+    padding: 20px; /* Espaciado interno */
+    text-align: center; /* Alinear el texto a la izquierda */
+    font-size: 1.3rem; /* Tamaño de fuente */
+    position: relative; /* Para posicionar la imagen */
+}
+
+.header img {
+    width: 100px; /* Ancho de la imagen */
+    height: 100px; /* Alto de la imagen */
+    border-radius: 50%; /* Hacer la imagen redonda */
+    position: absolute; /* Posiciona la imagen */
+    top: 20px; /* Ajusta la posición vertical */
+    right: 50px; /* Ajusta la posición horizontal */
+}
+
+.navbar {
+    grid-area: navbar;
+    background-color: #a1d396; /* Color de fondo */
+    color: rgb(38, 30, 73); /* Color del texto */
+    padding: 10px; /* Espaciado interno */
+    display: flex; /* Usar flexbox para alinear horizontalmente */
+    justify-content: space-around; /* Espacio entre elementos */
+}
+
+.navbar ul {
+    list-style-type: none; /* Quitar los puntos de la lista */
+    padding: 0; /* Sin padding */
+    margin: 0; /* Sin margen */
+    display: flex; /* Usar flexbox para alinear horizontalmente */
+}
+
+.navbar li {
+    margin: 0 10px; /* Espacio entre elementos de la lista */
+}
+
+.navbar a {
+    color: rgb(59, 40, 168); /* Color de los enlaces */
+    text-decoration: none; /* Sin subrayado */
+}
+
+.navbar a:hover {
+    text-decoration: underline; /* Subrayar al pasar el mouse*/
+}
+.sidebar {
+    grid-area: sidebar;
+    background-color: #fdcfcf;
+}/*barra lateral*/
+
+.main {
+    grid-area: main;
+    background-color: #f5f5f5;
+    
+}/*articulo o contenido principal*/
+
+.footer {
+    grid-area: footer; /* Área de cada elemento o ítem */
+    background-color: #69737d; /* Color de fondo */
+    color: #f1f1f1; /* Color del texto */
+    text-align: center; /* Centra el contenido */
+    padding: 5px 10px; /* Espaciado interno */
+    font-size: 1rem; /* Tamaño de fuente reducido */
+    display: flex; /* Utiliza flexbox */
+    flex-wrap: wrap; /* Permite que el contenido se ajuste en múltiples líneas */
+    justify-content: center; /* Centra horizontalmente */
+    align-items: center; /* Centra verticalmente */
+    height: 50px; /* Altura fija del footer */
+    box-sizing: border-box; /* Incluye el padding en el cálculo de altura */
+}
+
+.footer-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer-content span {
+    margin: 0 5px; /* Espaciado entre elementos */
+}
+
+.footer-content a {
+    color: #ffd700; /* Color dorado para el enlace de correo */
+    text-decoration: none; /* Quita el subrayado del enlace */
+}
+
+.footer-content a:hover {
+    text-decoration: underline; /* Subraya el enlace al pasar el cursor */
+}
+
+/* Ajustes para pantallas pequeñas como dispositivos moviles */
+@media (max-width: 400px) {
+    .footer {
+        font-size: 1rem; /* Reduce aún más el tamaño de fuente */
+    }
+    .footer-content span {
+        margin: 0 2px;
+    }
+}
+
+
+
+.grid-container {
+    display: grid; /*los elementos primarios de la clase container 
+    seran item grid*/
+    gap: 10px; /*separacion entre items*/
+    grid-template:/*se definen las areas dentro del grid*/
+        "header"    100px /*aqui se puede poner el ancho de columna*/
+        "navbar"    50px
+        "main"      auto
+        "sidebar"   70px
+        "footer"    50px;
+} /*este estilo es para dispositivo movil*/
+
+
+
+
+@media (min-width: 600px){
+    .grid-container {
+        
+        grid-template-columns: 200px auto; /*ancho de columnas*/
+        grid-template-rows: 100px 50px auto 50px; /*ancho de columnas*/
+        grid-template-areas:/*como van a estar las areas dentro del grid*/
+        "header header"
+        "navbar navbar"
+        "sidebar main"
+        "footer footer "
+        }
+
+}
+
+@media (min-width: 900px) {
+    .grid-container {
+        grid-template:
+        "header header header" 150px 
+        "navbar navbar navbar " 50px
+        "sidebar main main" auto
+        "footer footer footer" 50px /
+        200px auto 200px; /*datos de las columnas*/
+
+    }
+}
+
+.main > * {
+    box-shadow: -1px 1px 7px 0px rgba(0, 0, 0, 0.2);/*sombra de
+                los elementos del container*/
+    border-radius: 4px;
+    padding: 10px;
+    text-align: center;
+}
+
+.main {
+    display: grid;
+    gap: 5px; /*separacion entre items*/
+    grid-template:
+        "section1 section1 section1"  auto
+        "formula1 formula2 formula3" 380px
+        "section2 section2 section2"   auto
+        "formula4 formula5 formula6"  380px /
+        1fr 1fr 1fr;
+}
+
+.main img {
+    width: 90%;/*para ajustar el tamanio de la imagen*/
+}
+
+.main .img_principal {
+    width: 50%;
+}
+
+.ancho {
+    background-color: #3498db;
+    grid-column: span 1;
+} /*se pone esta clase para que la columna ocupe tres elementos*/
+
+form ul {
+    list-style: none;
+    padding: 5px;
+    margin: 0;
+}
+
+form li {
+    margin-top: 5px;    
+}
+
+form label {
+    /*para que se vea ordenado*/
+    display: inline-block;
+    width: 50%;
+    text-align: left;
+    padding-bottom: 10px;
+    font-size: 0.8rem;
+}
+
+form input {
+     /*para que se vea ordenado*/
+     display: inline-block;
+     width: 4rem;
+     text-align: left;
+     padding-bottom: 5px;
+     
+}
+
+.ancho-section {
+    background-color:white;
+    grid-column: span 3;
+} /*se pone esta clase para que la columna ocupe tres elementos*/
+    
+    
+.resultadosform {
+    display: none; /* Oculto al inicio */
+    padding: 10px; /* espacios internos en el div */
+    border-radius: 4px; /* Bordes redondeados */
+    margin-top: 10px; /* Espacio superior */
+    background-color: #a7dee7; /* Fondo para resultado */
+    border: 1px solid #22a4b8; /* Borde */
+    color: #0c5460; /* Color del texto */
+}

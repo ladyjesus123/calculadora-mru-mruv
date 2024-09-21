@@ -1,0 +1,97 @@
+div.nombre-de-la-clase*8{$} esto es para poner la cantidad
+de filas de la etiqueta que queremos y que se enumere de una vez
+div.nombre-de-la-clase es la etiqueta con su clase
+*8 cantidad de veces que queremos la fila de la etiqueta
+{$} para enumerar las filas en el apartado visible
+
+/*se definen las areas para que tenga las 5 etiquetas
+NO IMPORTA EL NOMBRE pero seria el mismo de la clase, asi 
+como se escriban aqui asi mismo van a aparecer en el navegador
+o dispositivo movil*/
+
+/*para dar espacio y poner a la izquierda el sidebar se hace en 
+columnas en el grid container asi:
+-header header header
+-navbar navbar navbar
+-sidebar main main
+-footer footer footer
+de modo que solo ocupe un espacio de columna a la izquierda y el resto
+sea de los otros items
+esto se hace con media query que es una funcion de css para ajustar el 
+estilo del contenido dependiendo del dispositivo que estemos usando para
+visualizar la pagina web si su ancho minimo es de 600px entonces...
+*/
+
+/*para ajustar el ancho de las columnas se usa el grid-template-columns
+        en donde se pone el ancho que queremos habiendo 3 columnas en este
+        caso serian tres datos pero si solo queremos definir uno solamente se 
+        coloca auto despues 
+        - 200px 200px 200px
+        - auto 200px auto
+        - 200px auto auto
+        */
+
+        /*para ajustar el ancho de las filas se usa el grid-template-rows
+        en donde se pone el ancho que queremos habiendo 4 filas en este
+        caso serian cinco datos pero si solo queremos definir uno se coloca auto 
+        - 100px 50px auto 200px
+        */
+
+
+grid-template columns: repeat(auto-fill, minmax(anchominimopx, 1f))
+esto se usa para hacer los items en columnas responsivas en donde 
+repeat es una funcion para calcular el ancho del grid automatico,
+para tener un ancho que los items se adapten al ancho del grid 
+donde se pone el ancho de 250px para cada item entonces si pasa de 
+ese valor crea una nueva columna y 1fr es lo que se usa restante para 
+la siguiente columna
+
+el auto fit es para cuando hay pocos elementos ocupen todo el ancho
+a medida que se vaya cambiando de tamanio
+
+
+
+/*
+tambien se puede poner de la siguiente forma para optimizar 
+codigo
+grid-template:
+"header header" 100px este valor es de la fila
+"navbar navbar" 50px
+"sidebar main" auto
+"footer footer" 50px; /
+200px auto estos dos valores son los de la columna
+
+se escribe solamente grid-template para poner todos los
+datos de una vez
+
+*/
+
+grid-auto-rows: minmax(200px, auto)
+
+gap: 20px;separar los items entre ellos 
+padding para separar los elementos del margen exterior
+
+grid-column-start: es para ver desde que linea queremos que el 
+item ocupe espacio
+
+grid-column-end: es para ver hasta que linea queremos que el item
+termine de ocupar espacio aqui se puede poner -1 si queremos que 
+se termine hasta la ultima linea
+
+grid-column: 1 / -1 en donde se ponen el star y el end en una sola
+linea de codigo
+
+grid column: 1 / span 3; en donde span es la cantidad de espacios
+en el grid
+
+.alto {
+    grid-column: span 2;
+} // se pone esta clase para que la columna ocupe dos elementos
+
+
+.ancho {
+    grid-row: span 2;
+} // se pone esta clase para que la fila ocupe dos elementos
+
+grid-auto-flow: dense; es para acomodar los elementos de las filas
+a medida que vayan cambiando el tamanio
